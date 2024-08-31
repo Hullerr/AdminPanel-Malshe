@@ -32,7 +32,7 @@ function App() {
         formData.append('image', image);
 
         try {
-            await axios.post('https://malshe-infrastructure-admin-panel.vercel.app/upload', formData);
+            await axios.post('https://malshe-infrastructure-admin-panel.vercel.app', formData);
             alert('Upload successful!');
             fetchItems(); // Refresh items after upload
         } catch (error) {
