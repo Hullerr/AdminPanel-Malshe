@@ -14,7 +14,7 @@ function App() {
 
     const fetchItems = async () => {
         try {
-            const response = await axios.get('https://admin-panel-malshe.vercel.app/items'); // Ensure this URL is correct
+            const response = await axios.get('https://malshe-infrastructure-admin-panel.vercel.app/items'); // Ensure this URL is correct
             const data = response.data;
             console.log(data); // Log to inspect the response data
             // Ensure data is an array, or adjust based on the actual structure
@@ -32,7 +32,7 @@ function App() {
         formData.append('image', image);
 
         try {
-            await axios.post('https://admin-panel-malshe.vercel.app/upload', formData);
+            await axios.post('https://malshe-infrastructure-admin-panel.vercel.app/upload', formData);
             alert('Upload successful!');
             fetchItems(); // Refresh items after upload
         } catch (error) {
@@ -105,7 +105,7 @@ function App() {
                             </a>
                             {item.imageUrl && (
                                 <img
-                                    src={`https://admin-panel-malshe.vercel.app${item.imageUrl}`}
+                                    src={`https://malshe-infrastructure-admin-panel.vercel.app${item.imageUrl}`}
                                     alt={item.title}
                                     className="mt-2 rounded"
                                 />
