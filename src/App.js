@@ -23,15 +23,15 @@ function App() {
             console.error('There was an error fetching the items!', error);
         }
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('title', title);
         formData.append('link', link);
         formData.append('image', image);
-
+    
         try {
+            // Corrected URL to point to the /upload endpoint
             await axios.post('https://malshe-infrastructure-admin-panel.vercel.app/upload', formData);
             alert('Upload successful!');
             fetchItems(); // Refresh items after upload
@@ -39,6 +39,7 @@ function App() {
             console.error('There was an error uploading the data!', error);
         }
     };
+    
 
     const handleFileChange = (e) => {
         setImage(e.target.files[0]);
